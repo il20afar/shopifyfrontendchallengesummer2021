@@ -40,6 +40,9 @@ const MovieTileContainer = (props: IMovieTileContainerProps) => {
     onAction: () => {
       if (showActionButton) {
         ref.current && ref.current.classList.add("close_animate");
+        if (isExpanded) {
+          toggleExpanded(index, movieResult.imdbID);
+        }
         window.setTimeout(() => {
           onAction(type, movieResult.imdbID);
         }, 300);
