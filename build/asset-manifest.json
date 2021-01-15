@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/shopifyfrontendchallengesummer2021/static/css/main.c7ca5e74.chunk.css",
+    "main.js": "/shopifyfrontendchallengesummer2021/static/js/main.eedd4411.chunk.js",
+    "main.js.map": "/shopifyfrontendchallengesummer2021/static/js/main.eedd4411.chunk.js.map",
+    "runtime-main.js": "/shopifyfrontendchallengesummer2021/static/js/runtime-main.6a4d5554.js",
+    "runtime-main.js.map": "/shopifyfrontendchallengesummer2021/static/js/runtime-main.6a4d5554.js.map",
+    "static/js/2.55f27521.chunk.js": "/shopifyfrontendchallengesummer2021/static/js/2.55f27521.chunk.js",
+    "static/js/2.55f27521.chunk.js.map": "/shopifyfrontendchallengesummer2021/static/js/2.55f27521.chunk.js.map",
+    "static/js/3.f3db8f7b.chunk.js": "/shopifyfrontendchallengesummer2021/static/js/3.f3db8f7b.chunk.js",
+    "static/js/3.f3db8f7b.chunk.js.map": "/shopifyfrontendchallengesummer2021/static/js/3.f3db8f7b.chunk.js.map",
+    "index.html": "/shopifyfrontendchallengesummer2021/index.html",
+    "static/css/main.c7ca5e74.chunk.css.map": "/shopifyfrontendchallengesummer2021/static/css/main.c7ca5e74.chunk.css.map",
+    "static/js/2.55f27521.chunk.js.LICENSE.txt": "/shopifyfrontendchallengesummer2021/static/js/2.55f27521.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a4d5554.js",
+    "static/js/2.55f27521.chunk.js",
+    "static/css/main.c7ca5e74.chunk.css",
+    "static/js/main.eedd4411.chunk.js"
+  ]
+}
