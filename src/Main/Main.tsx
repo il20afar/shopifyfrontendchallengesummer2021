@@ -52,14 +52,15 @@ const Main = () => {
 
     nominations: {
       onAction: (type: "Results" | "Nominations", index: number) => {
+        console.log(index);
         if (type === "Results") {
           // @ts-ignore
-          const rest = searchResults.find((elem: any) => index === elem.Title);
+          const rest = searchResults.find((elem: any) => index === elem.imdbID);
           // @ts-ignore
           setNominations([rest, ...nominations]);
         } else {
           setNominations(
-            [...nominations].filter((elem: any) => index !== elem.Title)
+            [...nominations].filter((elem: any) => index !== elem.imdbID)
           );
         }
       },
@@ -71,6 +72,8 @@ const Main = () => {
 
   // Updates the content of local storage on nominations change
   useUpdateLocalStorage(nominations, setNominations);
+
+  console.log(searchResults, nominations);
 
   const isBannerActive = nominations.length === 5;
   return (

@@ -41,7 +41,7 @@ const MovieTileContainer = (props: IMovieTileContainerProps) => {
       if (showActionButton) {
         ref.current && ref.current.classList.add("close_animate");
         window.setTimeout(() => {
-          onAction(type, movieResult.Title);
+          onAction(type, movieResult.imdbID);
         }, 300);
       }
     },
