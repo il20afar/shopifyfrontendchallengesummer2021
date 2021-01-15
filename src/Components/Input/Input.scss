@@ -1,0 +1,115 @@
+@import "../../Styles/Utils.scss";
+
+$height: 50px;
+$border_size: 2px;
+@mixin transition($time: 0.15s) {
+  transition: $time ease-in-out;
+}
+@mixin child0Auto() {
+  > * {
+    margin: 0 auto;
+    height: 30px;
+    width: auto;
+  }
+}
+
+.component_il20afar_input {
+  @include flex(row, space-between);
+
+  .input_container {
+    @include wh(calc(100% - 50px), $height);
+    position: relative;
+
+    .input_div {
+      @include wh(100%, 100%);
+      background-color: ghostwhite;
+      border: $border_size solid transparent;
+      border-radius: 7px;
+      outline: none;
+      box-sizing: border-box;
+      z-index: 1000;
+      background-color: ghostwhite;
+      font-size: $height - 30px;
+      font-family: Roboto, sans-serif !important;
+      font-weight: 300;
+      padding: 10px 50px 10px 10px;
+      box-shadow: $boxshadow;
+      @include transition();
+
+      &:placeholder-shown {
+        font-style: italic;
+      }
+
+      // &:active {
+      //   + .cancel_icon_container {
+      //     visibility: visible;
+      //   }
+      // }
+    }
+    .cancel_icon_container {
+      @include wh(50px, 50px);
+      @include flex(column, center);
+      @include abs(0, 0);
+      @include child0Auto();
+      @include transition(0.05s);
+      visibility: hidden;
+
+      &.unavailable {
+        visibility: hidden;
+        opacity: 0;
+      }
+      &:hover {
+        cursor: pointer;
+        opacity: 0.2;
+      }
+    }
+  }
+
+  &:focus-within,
+  &:active {
+    .input_div {
+      border: $border_size solid $purple;
+    }
+    .cancel_icon_container {
+      visibility: visible;
+    }
+  }
+
+  .search_icon_container {
+    @include wh(2 * $height, $height - $border_size * 2);
+    @include flex(column, center);
+    border: $border_size solid transparent;
+
+    border-radius: 7px;
+    background-color: $purple;
+    margin-left: 6px;
+    cursor: pointer;
+    box-shadow: $boxshadow;
+    @include transition(0.05s);
+
+    @media only screen and (max-width: 600px) {
+      width: $height;
+    }
+
+    &.unavailable {
+      background-color: #454f5b;
+      opacity: 0.3;
+      box-shadow: none;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    &.available {
+      &:hover {
+        background-color: rgb(188, 188, 220);
+        opacity: 0.7;
+      }
+      &:active {
+        transform: translateY($border_size);
+        box-shadow: none;
+      }
+    }
+
+    @include child0Auto();
+  }
+}

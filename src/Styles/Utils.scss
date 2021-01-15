@@ -1,0 +1,46 @@
+// [THEME VARIABLES]
+$bg: #fdf9ec;
+$logo: #108043;
+$purple: #50248f;
+$green: #50b83c;
+$red: #ff0000;
+$bggray: #173630;
+
+$boxshadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+  0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),
+  0 16px 16px rgba(0, 0, 0, 0.12);
+
+// [FUNCTIONS]
+@mixin assVal($properties, $value) {
+  @each $property in $properties {
+    #{$property}: $value;
+  }
+}
+
+// [PSEUDOCLASSES]
+@mixin wh($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex($direction, $justifyContent) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+}
+
+@mixin abs($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin font($size, $color, $lineheight, $weight, $style) {
+  font-size: $size;
+  color: $color;
+  line-height: $lineheight;
+  font-weight: $weight;
+  font-style: $style;
+}
