@@ -1,12 +1,18 @@
 // [IMPORTS]
 /* node_modules */
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { v4 as uuid } from "uuid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { faMinus } from "@fortawesome/free-solid-svg-icons";
-import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { faFilm } from "@fortawesome/free-solid-svg-icons";
+import {
+  faInfo,
+  faPlus,
+  faMinus,
+  faInfoCircle,
+  faSpinner,
+  faFilm,
+  faTimesCircle,
+} from "@fortawesome/free-solid-svg-icons";
+
 /* project */
 import InfoFieldContainer from "../InfoFieldContainer/InfoFieldContainer";
 /* folder */
@@ -26,6 +32,7 @@ const MovieTileContainer = (props: IMovieTileContainerProps) => {
   } = props;
 
   const ref = useRef<HTMLDivElement>(null);
+  const [isExpandLoading, setIsExpandLoading] = useState(false);
 
   const isResults = type === "Results";
 
@@ -36,6 +43,12 @@ const MovieTileContainer = (props: IMovieTileContainerProps) => {
         window.setTimeout(() => {
           onAction(type, movieResult.Title);
         }, 300);
+      }
+    },
+    onExpandInfo: () => {
+      if (ref.current) {
+        !isExpandLoading && setIsExpandLoading(true);
+        toggleExpanded(index, movieResult.imdbID);
       }
     },
   };
@@ -94,10 +107,19 @@ const MovieTileContainer = (props: IMovieTileContainerProps) => {
       </div>
 
       <div
-        className="icon_container info"
-        onClick={() => toggleExpanded(index, movieResult.imdbID)}
+        className={`icon_container info ${isExpandLoading ? "animate" : ""}`}
+        onClick={handlers.onExpandInfo}
       >
-        <FontAwesomeIcon icon={faInfoCircle} color={"black"} />
+        <FontAwesomeIcon
+          icon={
+            isExpandLoading
+              ? faSpinner
+              : isExpanded
+              ? faTimesCircle
+              : faInfoCircle
+          }
+          color={"black"}
+        />
       </div>
     </div>
   );

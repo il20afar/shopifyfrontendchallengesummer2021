@@ -9,9 +9,7 @@ const InfoFieldContainer = (props: IInfoFieldContainerProps) => {
   return (
     <div className="component_il20afar_info_field_container">
       <div className="info_field_title">{title}:</div>
-      <a className="info_field_content" href={children}>
-        {children}
-      </a>
+      <div className="info_field_content">{children}</div>
     </div>
   );
 };

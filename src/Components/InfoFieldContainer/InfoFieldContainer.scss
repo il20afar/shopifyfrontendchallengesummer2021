@@ -1,7 +1,7 @@
 @import "../../Styles/Utils.scss";
 
 .component_il20afar_info_field_container {
-  @include wh(100%, fit-content);
+  @include wh(100%, auto);
   @include flex(column, flex-start);
   text-align: left;
   color: black;
@@ -14,7 +14,7 @@
     margin-bottom: 2px;
   }
   .info_field_content {
-    @include wh(100%, fit-content);
+    @include wh(100%, auto);
     @include font(16px, inherit !important, 16px, 300, auto);
 
     word-break: break-word;
