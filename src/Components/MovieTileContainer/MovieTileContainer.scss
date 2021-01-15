@@ -122,21 +122,10 @@
     }
     &.hide_action_button {
       background-color: rgb(192, 192, 192);
-      cursor: default;
       .icon_container.add {
-        animation: hide_action_button 0.2s ease-out;
-        animation-fill-mode: forwards;
-
-        @keyframes hide_action_button {
-          from {
-            opacity: 1;
-          }
-          to {
-            opacity: 0;
-            display: none;
-          }
-        }
+        visibility: hidden;
       }
+      cursor: default;
     }
   }
 
