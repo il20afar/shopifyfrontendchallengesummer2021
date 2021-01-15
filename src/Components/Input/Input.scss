@@ -22,13 +22,13 @@ $border_size: 2px;
 
     .input_div {
       @include wh(100%, 100%);
-      background-color: ghostwhite;
+      background-color: #f9fafb;
       border: $border_size solid transparent;
       border-radius: 7px;
       outline: none;
       box-sizing: border-box;
       z-index: 1000;
-      background-color: ghostwhite;
+      background-color: #f9fafb;
       font-size: $height - 30px;
       font-family: Roboto, sans-serif !important;
       font-weight: 300;
@@ -39,12 +39,6 @@ $border_size: 2px;
       &:placeholder-shown {
         font-style: italic;
       }
-
-      // &:active {
-      //   + .cancel_icon_container {
-      //     visibility: visible;
-      //   }
-      // }
     }
     .cancel_icon_container {
       @include wh(50px, 50px);

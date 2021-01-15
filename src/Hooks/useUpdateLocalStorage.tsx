@@ -1,5 +1,8 @@
+// [IMPORTS]
+/* node_modules */
 import { useEffect } from "react";
 
+// [CUSTOM HOOK]
 export const useUpdateLocalStorage = (
   nominations: any,
   setNominations: (obj: any) => void

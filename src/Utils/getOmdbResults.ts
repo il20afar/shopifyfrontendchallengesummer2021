@@ -11,7 +11,7 @@ export const getOmdbResults = async (
   });
   try {
     const req = await fetch(
-      `http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&${params}`
+      `https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&${params}`
     );
     return await req.json();
   } catch (error) {

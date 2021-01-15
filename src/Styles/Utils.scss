@@ -16,6 +16,15 @@ $boxshadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     #{$property}: $value;
   }
 }
+@mixin hideScrollbars() {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  & {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
 
 // [PSEUDOCLASSES]
 @mixin wh($width: auto, $height: auto) {
@@ -43,4 +52,16 @@ $boxshadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
   line-height: $lineheight;
   font-weight: $weight;
   font-style: $style;
+}
+
+@mixin container($height) {
+  $margin: 30px;
+  @include wh(calc(100% - 60px), $height);
+  border-radius: 10px;
+  margin: 10px 30px;
+  box-sizing: border-box;
+}
+
+@mixin transition($time: 0.35s) {
+  transition: $time ease-in-out;
 }

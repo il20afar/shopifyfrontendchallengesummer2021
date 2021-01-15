@@ -1,0 +1,161 @@
+@import "../../Styles/Utils.scss";
+
+.component_il20afar_movie_info_container {
+  @include wh(calc(100% - 20px), 80px);
+  @include flex(row, space-between);
+  margin: 0 10px 10px 10px;
+  overflow: hidden;
+
+  background-color: ghostwhite;
+  border-radius: 6px;
+  box-sizing: border-box;
+  box-shadow: $boxshadow;
+
+  cursor: pointer;
+  scroll-snap-align: start;
+  @include transition(0.1s);
+
+  .action_hover_wrapper {
+    @include wh(calc(100% - 44px), 100%);
+    @include flex(row, space-between);
+
+    .poster_container {
+      $height: 78px;
+      @include wh(54px, $height);
+      overflow: hidden;
+      background-color: #b1b1b1;
+      border-radius: 6px;
+      margin: 1px;
+      box-sizing: border-box;
+      @include flex(column, center);
+
+      svg {
+        margin: 0 auto;
+      }
+
+      img {
+        @include wh(auto, $height);
+        object-fit: cover;
+      }
+    }
+
+    .info_container {
+      @include wh(calc(100% - 120px), 80px);
+      @include flex(column, center);
+      .info_wrapper {
+        @include font(16px, black, 16px, 300, auto);
+        word-break: break-word;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+
+  .icon_container {
+    @include wh(34px, 100%);
+    @include flex(column, center);
+    border-radius: 8px;
+    cursor: pointer;
+    @include transition(0.1s);
+
+    &.info {
+      padding-right: 10px;
+    }
+
+    &:hover {
+      opacity: 0.8;
+
+      &.info {
+        svg {
+          color: $purple;
+        }
+      }
+      &.add {
+        svg {
+          color: $green;
+        }
+      }
+      &.remove {
+        svg {
+          color: $red;
+        }
+      }
+    }
+
+    > * {
+      margin: 0 auto;
+      height: 20px;
+      width: auto;
+    }
+  }
+
+  &.expanded {
+    height: fit-content;
+    .info_container {
+      @include wh(calc(100% - 120px), 100%);
+      margin: 10px 0 0 0;
+      color: black;
+    }
+    .icon_container {
+      height: 80px;
+    }
+  }
+
+  &.results {
+    .action_hover_wrapper:hover {
+      .icon_container svg {
+        color: $green;
+      }
+    }
+    &.hide_action_button {
+      background-color: rgb(192, 192, 192);
+      cursor: default;
+      .icon_container.add {
+        animation: hide_action_button 0.2s ease-out;
+        animation-fill-mode: forwards;
+
+        @keyframes hide_action_button {
+          from {
+            opacity: 1;
+          }
+          to {
+            opacity: 0;
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &.nominations {
+    .action_hover_wrapper:hover {
+      .icon_container svg {
+        color: $red;
+      }
+    }
+  }
+
+  &.close_animate {
+    animation: close_animate 0.4s ease-in-out;
+
+    @keyframes close_animate {
+      from {
+        height: 80px;
+        opacity: 1;
+      }
+      to {
+        height: 0px;
+        opacity: 0;
+      }
+    }
+  }
+  &:not(.hide_action_button) {
+    &:hover {
+      background-color: rgb(207, 207, 207);
+      .poster_container,
+      .icon_container,
+      .icon_container.info {
+        opacity: 0.8;
+      }
+    }
+  }
+}

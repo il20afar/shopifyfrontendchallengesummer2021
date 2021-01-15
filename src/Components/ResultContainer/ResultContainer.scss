@@ -1,0 +1,73 @@
+@import "../../Styles/Utils.scss";
+
+.component_il20afar_result_container {
+  @include wh(calc(50% - 5px), 100%);
+  position: relative;
+  border-radius: 10px;
+  background-color: $bggray;
+  box-shadow: $boxshadow;
+
+  .title_container {
+    @include wh(fit-content, 34px);
+    @include font(16px, $bg, 34px, 500, auto);
+    padding-left: 6px;
+  }
+
+  .content_wrapper {
+    @include wh(100%, calc(100% - 40px));
+    box-sizing: border-box;
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    @include hideScrollbars();
+
+    > :not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    &.idle {
+      .icon_container {
+        width: 100%;
+      }
+      .info_container {
+        display: none;
+      }
+    }
+
+    .empty_result_container {
+      @include wh(100%, 100%);
+      @include flex(column, center);
+      @include font(16px, ghostwhite, 20px, 500, auto);
+      opacity: 0.6;
+
+      text-align: center;
+    }
+  }
+
+  &.searching {
+    background-color: gray;
+    border-radius: 8px;
+    animation: animate_search 1s infinite ease-in-out;
+    > div {
+      display: none;
+    }
+
+    @keyframes animate_search {
+      0% {
+        background-color: rgb(211, 211, 211);
+      }
+      50% {
+        background-color: rgb(45, 45, 45);
+      }
+      100% {
+        background-color: rgb(211, 211, 211);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    @include wh(100% !important, calc(50% - 5px));
+    position: relative;
+    border-radius: 10px;
+    background-color: $bggray;
+  }
+}
