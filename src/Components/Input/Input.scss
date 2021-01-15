@@ -56,11 +56,13 @@ $border_size: 2px;
         cursor: pointer;
         opacity: 0.2;
       }
+      &:active {
+        visibility: visible;
+      }
     }
   }
 
-  &:focus-within,
-  &:active {
+  &:focus-within {
     .input_div {
       border: $border_size solid $purple;
     }

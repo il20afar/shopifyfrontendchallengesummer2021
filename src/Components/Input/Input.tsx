@@ -39,7 +39,7 @@ const Input = (props: IInputProps) => {
           onClick={() => {
             onCancel();
             //@ts-ignore
-            inputRef.current.focus();
+            // inputRef.current.focus();
           }}
         >
           <FontAwesomeIcon icon={faTimes} color="red" size="sm" />

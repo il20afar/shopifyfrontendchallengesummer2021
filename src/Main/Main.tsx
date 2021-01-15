@@ -1,10 +1,10 @@
 // [IMPORTS]
 /* node_modules */
 import React, { useState } from "react";
+import Div100vh from "react-div-100vh";
 /* project */
 import Input from "../Components/Input/Input";
 import ResultContainer from "../Components/ResultContainer/ResultContainer";
-
 import { useInitialLocalStorage } from "../Hooks/useInitialLocalStorage";
 import { useUpdateLocalStorage } from "../Hooks/useUpdateLocalStorage";
 import { getOmdbResults } from "../Utils/getOmdbResults";
@@ -74,7 +74,7 @@ const Main = () => {
 
   const isBannerActive = nominations.length === 5;
   return (
-    <>
+    <Div100vh style={{ maxHeight: "100%" }}>
       <div className={`nominations_banner ${isBannerActive ? "show" : "hide"}`}>
         You have successfully selected all of your nominations, thank you for
         using Shoppies 🙂
@@ -113,7 +113,7 @@ const Main = () => {
           />
         </div>
       </div>
-    </>
+    </Div100vh>
   );
 };
 
