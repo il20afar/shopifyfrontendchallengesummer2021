@@ -4,6 +4,9 @@ Shopify UX &amp; Web Developer Intern Challenge Summer 2021.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Visit:
+https://il20afar.github.io/shopifyfrontendchallengesummer2021/
+
 ## Features:
 
 - Search and display movies with covers.
